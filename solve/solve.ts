@@ -99,7 +99,7 @@ async function callGPT(request: Omit<CreateChatCompletionRequest, 'model'>) {
         max_tokens: 2000,
         n: 1,
         ...request
-    })).data.choices[0].message!.content || ''
+    })).data.choices[0]!.message!.content || ''
 }
 
 

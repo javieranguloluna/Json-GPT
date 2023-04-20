@@ -1,6 +1,5 @@
 
-import { solve, SolveResponse, SolveRequestOptions, SolveRequest } from '../index';
-import { openai } from '../solve'
+import { solve, SolveResponse, SolveRequestOptions, SolveRequest, openai } from '../solve/solve';
 
 describe('invalid format request', () => {
 
@@ -16,7 +15,7 @@ describe('invalid format request', () => {
     expect(response).toHaveProperty('data');
     expect(response.status).toBe(0);
     expect(response.data).toBe('{"error": "Invalid request format", "text": "void" }');
-  })
+  },40000)
 
 });
 

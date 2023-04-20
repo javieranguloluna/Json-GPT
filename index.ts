@@ -3,13 +3,13 @@ export {
     SolveRequest,
     SolveRequestOptions,
     SolveResponse
-} from './solve'
+} from './solve/solve'
 
 export {
     solveJson,
     SolveJsonRequest,
     SolveJsonResponse
-} from './solve-json'
+} from './solve/solve-json'
 
 export {
     solveChat,
@@ -18,4 +18,4 @@ export {
     UserMessage,
     AIMessage,
     SystemMessage
-} from './solve-chat'
+} from './solve/solve-chat'

@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { SolveRequestOptions, openai } from "../solve";
-import { SolveChatRequest, solveChat } from "../solve-chat";
-import { SolveJsonResponse } from "../solve-json";
+import { SolveRequestOptions, openai } from "../solve/solve";
+import { SolveChatRequest, solveChat } from "../solve/solve-chat";
+import { SolveJsonResponse } from "../solve/solve-json";
 
 describe('Solve Chat Integration', () => {
 
@@ -49,7 +49,7 @@ describe('Solve Chat Integration', () => {
             expect(response.data.message).toContain('READ_FILE');
             expect(response.data.message).toContain('WRITE_FILE');
         }
-    },20000)
+    },40000)
 
 })
 

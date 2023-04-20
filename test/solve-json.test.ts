@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { SolveRequestOptions, openai } from "../solve";
-import * as s from '../solve-json'
-import { SolveJsonRequest, SolveJsonResponse, fullParse, solveJson } from "../solve-json";
+import { SolveRequestOptions, openai } from "../solve/solve";
+import * as s from '../solve/solve-json'
+import { SolveJsonRequest, SolveJsonResponse, fullParse, solveJson } from "../solve/solve-json";
 
 describe('Integration solveJson', () => {
 
@@ -26,7 +26,7 @@ describe('Integration solveJson', () => {
                 name: z.string().describe('Nombre del jugador'),
                 extra_info: z.string().describe('Informacion extra sobre el jugador'),
                 partidos_jugados: z.number().describe('Numero de partidos jugados')
-            }).describe('Player')
+            }).strict().describe('Jugador')
         }
 
         const options: SolveRequestOptions = {
@@ -51,7 +51,7 @@ describe('Integration solveJson', () => {
         }
 
 
-    }, 20000)
+    }, 40000)
 
 });
 

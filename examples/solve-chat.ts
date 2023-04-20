@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { SolveChatRequest, solveChat } from "../solve-chat";
-import { SolveJsonResponse } from "../solve-json";
-import { SolveRequestOptions } from "../solve";
+import { SolveChatRequest, solveChat } from "../solve/solve-chat";
+import { SolveJsonResponse } from "../solve/solve-json";
+import { SolveRequestOptions } from "../solve/solve";
 
 interface Message {
     message: string; // WORKS BAD WITH ONLY THE MESSAGE PROP

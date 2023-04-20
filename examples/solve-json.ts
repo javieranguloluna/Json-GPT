@@ -1,5 +1,5 @@
-import { SolveRequestOptions } from '../solve';
-import { SolveJsonRequest, SolveJsonResponse, solveJson } from '../solve-json'
+import { SolveRequestOptions } from '../solve/solve';
+import { SolveJsonRequest, SolveJsonResponse, solveJson } from '../solve/solve-json'
 import { z } from 'zod'
 
 interface Player {
