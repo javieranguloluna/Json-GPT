@@ -3,7 +3,10 @@
  * @module solve
  */
 
+import dotenv from 'dotenv'
 import { ChatCompletionRequestMessage, Configuration, CreateChatCompletionRequest, OpenAIApi } from 'openai'
+
+dotenv.config()
 
 export const openai = new OpenAIApi(new Configuration({
     apiKey: process.env.OPENAI_API_KEY
