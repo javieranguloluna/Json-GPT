@@ -37,6 +37,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@changesets/cli": "^2.26.1",
     "@dqbd/tiktoken": "^1.0.6",
     "dotenv": "^16.0.3",
     "openai": "^3.2.1",
