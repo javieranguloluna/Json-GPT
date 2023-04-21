@@ -8,4 +8,4 @@ Niveles de funcionalidad: Json-GPT incluye tres niveles de funcionalidad: el niv
 
 Fácil de usar: Json-GPT está diseñada para ser fácil de usar, con una interfaz intuitiva y documentación clara. La librería está escrita en TypeScript, lo que proporciona tipado estático y una mayor seguridad durante el desarrollo.
 
-Potente y versátil: Con Json-GPT, puedes aprovechar la capacidad de generación de lenguaje natural del modelo GPT-3.5-turbo de OpenAI para crear aplicaciones y servicios inteligentes y creativos, como generación de texto, traducción, resumen, y más...
+Potente y versátil: Con Json-GPT, puedes aprovechar la capacidad de generación de lenguaje natural del modelo GPT-3.5-turbo de OpenAI para crear aplicaciones y servicios inteligentes y creativos, como generación de texto, traducción, resumen, y más.
