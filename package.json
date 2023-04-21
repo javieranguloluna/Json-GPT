@@ -1,6 +1,6 @@
 {
   "name": "json-gpt",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Json-GPT permite interactuar de forma sencilla con el modelo GPT-3.5-turbo en formato JSON",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
