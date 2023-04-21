@@ -1,11 +1,47 @@
-# Json-GPT
-Json-GPT es una librería de Node.js escrita en TypeScript que te permite interactuar de forma conveniente y eficaz con el modelo GPT-3.5-turbo de OpenAI en formato JSON. La librería proporciona un nivel de abstracción que facilita el envío y recepción de datos en formato JSON al modelo, lo que te permite tener un mayor control sobre las entradas y salidas del modelo, y trabajar con esquemas JSON de forma sencilla.
+# 🔍 Introducción a Json-GPT
+Json-GPT es una librería para Node.js escrita en TypeScript que proporciona una interfaz para interactuar con el modelo de lenguaje GPT-3.5-turbo de OpenAI. Con Json-GPT, puedes realizar solicitudes a GPT-3.5-turbo para resolver preguntas, generar texto, mantener conversaciones en tiempo real y mucho más, todo ello usando objetos JSON.
 
-## Características principales
-Interacción en formato JSON: Json-GPT te permite interactuar con el modelo GPT-3.5-turbo de OpenAI en formato JSON, lo que facilita la validación, corrección y manipulación de las respuestas según el esquema especificado.
+La librería Json-GPT ofrece tres métodos principales para interactuar con GPT-3.5-turbo: solve, solveJson y solveChat. Estos métodos te permiten enviar solicitudes a GPT-3.5-turbo con diferentes formatos de entrada y obtener respuestas generadas por el modelo.
 
-Niveles de funcionalidad: Json-GPT incluye tres niveles de funcionalidad: el nivel base, que te permite enviar texto plano o una conversación al modelo y recibir una respuesta en forma de string; el nivel json, que integra la librería zod para trabajar con esquemas JSON, lo que facilita la validación y corrección de respuestas según el esquema especificado; y el nivel chat, que te permite interactuar con el modelo en base a una conversación, con opciones personalizables y retornando las respuestas en el formato JSON especificado.
+## 💡 Características
+* <span style="color:blue">**Ts**</span>. **Interfaz en TypeScript:** Json-GPT está escrita en TypeScript, lo que significa que ofrece una interfaz con tipos de datos fuertemente tipados para una mejor experiencia de desarrollo en entornos TypeScript.
 
-Fácil de usar: Json-GPT está diseñada para ser fácil de usar, con una interfaz intuitiva y documentación clara. La librería está escrita en TypeScript, lo que proporciona tipado estático y una mayor seguridad durante el desarrollo.
+* **{...}** **Solicitud en formato JSON:** Json-GPT permite enviar solicitudes a GPT-3.5-turbo en formato JSON, lo que facilita la creación de solicitudes estructuradas y personalizadas.
 
-Potente y versátil: Con Json-GPT, puedes aprovechar la capacidad de generación de lenguaje natural del modelo GPT-3.5-turbo de OpenAI para crear aplicaciones y servicios inteligentes y creativos, como generación de texto, traducción, resumen, y más.
+* ✔️ **Validación de esquema con Zod:** Json-GPT utiliza la librería Zod para validar los datos de entrada y salida, lo que ayuda a garantizar que los datos enviados y recibidos sean válidos y cumplan con las expectativas del usuario.
+
+* ✏️ **Configuración personalizable:** Json-GPT proporciona opciones de configuración que permiten personalizar el comportamiento de las solicitudes, como la verbosidad de las respuestas y campos personalizados adicionales.
+
+
+
+
+## 📋  Requisitos previos
+Antes de usar Json-GPT, asegúrate de tener instalado Node.js en tu entorno de desarrollo. Además, necesitarás incluir en el archivo ```.env``` tu ```OPENAI_API_KEY``` para poder realizar solicitudes a través de la API de OpenAI.
+
+## 🔧 Instalación
+
+Para instalar Json-GPT en tu proyecto, puedes usar npm. Ejecuta el siguiente comando en tu terminal:
+
+```bash
+npm install json-gpt
+```
+
+Una vez instalada la librería, puedes importarla en tus archivos TypeScript y comenzar a utilizarla en tu código.
+
+## 💊 Uso
+
+### solve
+```typescript
+
+```
+
+### solveJson
+```typescript
+
+```
+
+### solveChat
+```typescript
+
+```
+
