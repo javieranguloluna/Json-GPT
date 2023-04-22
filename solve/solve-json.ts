@@ -135,7 +135,10 @@ export function handleError<Output extends object>(status: number, error: string
 
 export function fullParse<Output extends object>(text: string, z: z.ZodType<Output>, verbose: boolean, safeKey?: string) {
     try {
-        const obj = JSON.parse(text)
+        const open = text.indexOf('{')
+        const close = text.lastIndexOf('}')
+        const json = text.slice(open,close+1)
+        const obj = JSON.parse(json)
         return zodParse(obj,z,verbose)
     } catch (error: any) {
         return handleParseError(text,error.message,z,verbose,safeKey)

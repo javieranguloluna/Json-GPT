@@ -32,16 +32,95 @@ Una vez instalada la librería, puedes importarla en tus archivos TypeScript y c
 
 ### solve
 ```typescript
+import { SolveRequest, SolveRequestOptions, SolveResponse, solve } from 'json-gpt'
+
+const request: SolveRequest = 'Cual es el nombre del jugador que es el mayor anotador de la historia de la NBA? Aporta informacion extra sobre el jugador y el numero de partidos jugados'
+
+const options: SolveRequestOptions = {
+    verbose: true
+}
+
+solve(request, options).then((response: SolveResponse) => {
+    console.log('SOLVE RESPONSE', response)
+})
 
 ```
 
 ### solveJson
 ```typescript
+import { SolveRequestOptions, SolveJsonRequest, SolveJsonResponse, solveJson  } from 'json-gpt';
+import { z } from 'zod'
 
+interface Player {
+    name: string;
+    extra_info: string;
+    partidos_jugados: number;
+}
+
+const request: SolveJsonRequest<Player> = {
+    instructions: 'Aporta informacion extra sobre el jugador.',
+    data: {
+        requisitos: 'Debe ser el jugador con mas anotaciones de la historia de la NBA'
+    },
+    target: {
+        key: 'question',
+        value: 'Cual es el nombre del jugador que cumple los requisitos?'
+    },
+    zodSchema: z.object({
+        name: z.string().describe('Nombre del jugador'),
+        extra_info: z.string().describe('Informacion extra sobre el jugador'),
+        partidos_jugados: z.number().describe('Numero de partidos jugados')
+    }).describe('Player')
+}
+
+const options: SolveRequestOptions = {
+    verbose: false
+}
+
+solveJson(
+    request,
+    options
+).then((response: SolveJsonResponse<Player>) => {
+    console.log('Player', response.data)
+})
 ```
 
 ### solveChat
 ```typescript
+import { z } from "zod";
+import { SolveChatRequest, solveChat, SolveJsonResponse, SolveRequestOptions } from "json-gpt";
 
+interface Message {
+    message: string; // WORKS BAD WITH ONLY THE MESSAGE PROP
+    suggestions: Array<string>
+}
+
+const request: SolveChatRequest<Message> = {
+    instructions: 'You are Roger, a Smart Chat Assistant powered by GPT-3.5-turbo!',
+    messages: [
+        {
+            role: 'user',
+            message: 'Hola, quien eres? Como te llamas? Que herramientas estan disponibles? Sabes como me llamo?',
+            data: {}
+        }
+    ],
+    zodSchema: z.object({
+        message: z.string().describe('Yout message to the user'),
+        suggestions: z.string().array().describe('Suggested questions')
+    }).describe('Message'),
+    safeKey: 'message', // KEY WITH RESULTS IN CASE OF PARSING ERROR
+    custom: {
+        available_tools: ['READ_FILE','WRITE_FILE'],
+        user_name: 'JAL'
+    } // Put here your custom fields
+}
+
+const options: SolveRequestOptions = {
+    verbose: true
+}
+
+solveChat(request,options).then((response: SolveJsonResponse<Message>) => {
+    console.log('Message: ', response)
+})
 ```
 
